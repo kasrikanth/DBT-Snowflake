@@ -27,7 +27,7 @@ WITH bank_churn_updated AS (
             WHEN CreditScore BETWEEN 300 AND 579 THEN 'Poor'
             ELSE 'Unknown'
         END AS CreditScoreCategory
-    FROM DBT_DATABASE.BANKINGDATA_BRONZE_LAYER.BANK_CHURN
+    FROM {{ source('Bankingdata', 'BANK_CHURN') }}
 )
 
 SELECT * 

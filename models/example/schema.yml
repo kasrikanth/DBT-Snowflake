@@ -1,31 +1,47 @@
-
 version: 2
 
 models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
 
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
 
-    - name: sliv_bank_chrun_transformation
-      description: "Extracting month and year from date column and credit score based on score value"
-      columns:
-          - name: customer_id
-            descrpition: "THe customer is unique value"
-            test:
-                - unique
-                - not_null
+  - name: sliver_bankchrun_updated
+    description: "Extracting month and year from date column and credit score based on score value"
+    columns:
+      - name: customerid
+        description: "The customer is unique value"
+        tests:
+          - unique
+          - not_null
 
+  - name: Gold_Fact_Table
+    description: "This is the fact table containing measure values organized as data from all the tables in the database"
+    columns:
+      - name: customerid
+        description: "The customer_id is a unique value and a primary key"
+        tests:
+          - unique
+          - not_null
+
+      - name: creditscore
+        description: "Credit score of customer"
+        tests:
+          - not_null
+
+      - name: tenure
+        description: "Tenure: the period of customer's relationship with the bank"
+        tests:
+          - not_null
