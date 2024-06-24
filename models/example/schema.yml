@@ -19,3 +19,13 @@ models:
             tests:
                 - unique
                 - not_null
+
+    - name: sliv_bank_chrun_transformation
+      description: "Extracting month and year from date column and credit score based on score value"
+      columns:
+          - name: customer_id
+            descrpition: "THe customer is unique value"
+            test:
+                - unique
+                - not_null
+
