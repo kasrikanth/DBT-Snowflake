@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: Bankingdata
+    database: DBT_DATABASE
+    schema: BANKINGDATA_BRONZE_LAYER
+    tables:
+      - name: ACTIVECUSTOMER
+      - name: CREDITCARD
+      - name: BANK_CHURN
+      - name: GEOGRAPHY
+      - name: GENDER
+      - name: EXITCUSTOMER
+      - name: CUSTOMERINFO
+
+
+  - name: sliver_Bankingdata
+    database: DBT_DATABASE
+    schema: DBT_FILES_BANKINGDATA_SLIVER_LAYER
+    tables:
+      - name: SLIVER_BANKCHRUN_UPDATED

@@ -10,7 +10,7 @@ with Fact_table as(
         EstimatedSalary,
         Balance,
         NumOfProducts
-    FROM DBT_DATABASE.BANKINGDATA_BRONZE_LAYER.Bank_churn
+    from {{ source('Bankingdata', 'BANK_CHURN') }}
 )
 
 SELECT * FROM Fact_table
